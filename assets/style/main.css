@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2b2b2b;
+}
+
+nav {
+    display: flex;
+    padding: 10px;
+    background: #3b3b3b;
+    justify-content: flex-end;
+}
+
+button[data-btn-tarefa] {
+    border: none;
+    background: #059669;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+button[data-btn-tarefa]:hover {
+    background: #075c41;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#fields-container {
+    display: none;
+    width: 80vw;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 25px 0;
+    background: #353535;
+    border: 1px solid #6b21a8;
+    border-radius: 5px;
+    margin: 0 auto;
+    animation: showDiv 0.5s ease-out;
+}
+#edit-container {
+    display: none;
+    width: 80vw;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 25px 0;
+    background: #353535;
+    border: 1px solid #6b21a8;
+    border-radius: 5px;
+    margin: 0 auto;
+    animation: showDiv 0.5s ease-out;
+}
+
+#header-input {
+    display: flex;
+    width: 100%;
+    height: auto;
+    color: #fff;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#header-input button {
+    align-self: flex-end;
+}
+
+@keyframes showDiv {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+
+    100% {
+        opacity: 1;
+        display: flex;
+    }
+
+}
+
+.inputContainer {
+    display: flex;
+    width: 100%;
+    height: auto;
+    color: #fff;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+button[data-btn-closed] {
+    border: none;
+    background: #dc2626;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+button[data-btn-closed]:hover {
+    background: #b91c1c;
+    transition: all 0.5s;
+}
+button[data-btn-closed-edit] {
+    border: none;
+    background: #dc2626;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+button[data-btn-closed-edit]:hover {
+    background: #b91c1c;
+    transition: all 0.5s;
+}
+
+textarea {
+    max-width: 100vw;
+    min-height: 100%;
+    resize: none;
+}
+
+.inputContainer input, textarea {
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    font-size: 1.3rem;
+}
+
+.inputContainer input:focus, textarea:focus {
+    background: #ecd56d;
+}
+
+.inputContainer label {
+    text-transform: uppercase;
+    padding: 5px 0;
+}
+
+.inputContainer button {
+    margin: 10px 0;
+}
+
+
+
+#container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+    height: 100vh;
+    padding: 20px;
+}
+
+#btnAdd {
+    align-self: flex-end;
+    border: none;
+    background: #059669;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+#btnAdd:hover {
+    background: #075c41;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#cards-container {
+    display: flex;
+    max-width: 100vw;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    color: #fff;
+    justify-content: center;
+}
+
+#cards-container>p {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.card {
+    display: flex;
+    max-width: min-content;
+    flex-direction: column;
+    gap: 10px;
+    background: #353535;
+    min-width: 80%;
+}
+
+.card-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.card-header {
+    background: #6b21a8;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #3b3b3b;
+    padding: 5px;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5px;
+    background: #6b21a8;
+    padding: 10px;
+
+}
+
+button[data-btn-edit] {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+button[data-btn-edit]:hover {
+
+    color: #d8d8d8;
+}
+
+button[data-btn-delete] {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+button[data-btn-delete]:hover {
+
+    color: #d8d8d8;
+}
+
+@media (max-width:850px) {
+    .card {
+
+        min-width: 40%;
+    }
+}
+
+@media (max-width:720px) {
+    .card {
+        min-width: 100%;
+
+    }
+
+    #fields-container {
+        width: 100%;
+
+    }
+}

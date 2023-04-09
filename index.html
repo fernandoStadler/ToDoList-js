@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <button data-btn-tarefa>
+            <i class="fa-solid fa-circle-plus"> Nova tarefa </i>
+        </button>
+    </nav>
+    <div id="container">
+        <section id="fields-container" data-form>
+            <div id="header-input">
+                <button data-btn-closed><i class="fa-solid fa-circle-xmark"></i></button>
+            </div>
+            <div class="inputContainer">
+                <label>Título</label>
+                <input type="text" data-input-nome>
+            </div>
+            <div class="inputContainer">
+                <label>Descrição da tarefa</label>
+                <textarea placeholder="Descreva a atividade" data-description>
+                 </textarea>
+            </div>
+            <div class="inputContainer">
+                <button id="btnAdd" data-btn-add><i class="fa-solid fa-circle-check"></i></button>
+            </div>
+
+        </section>
+
+        <section id="edit-container" data-edit>
+            <div id="header-input">
+                <button data-btn-closed-edit><i class="fa-solid fa-circle-xmark"></i></button>
+            </div>
+            <div class="inputContainer">
+                <label>Título</label>
+                <input type="text" data-edit-title required>
+            </div>
+            <div class="inputContainer">
+                <label>Descrição da tarefa</label>
+                <textarea placeholder="Descreva a atividade" data-edit-description required>
+                 </textarea>
+            </div>
+            <div class="inputContainer">
+                <button id="btnAdd" data-btn-AddEdit><i class="fa-solid fa-circle-check"></i></button>
+            </div>
+        </section>
+        <section id="cards-container" data-task-list>
+            <!-- Gerado via JS -->
+        </section>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script src="https://kit.fontawesome.com/67f504bb87.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
