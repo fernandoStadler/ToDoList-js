@@ -1,5 +1,7 @@
 
 const cardList = document.querySelector('[data-task-list]');
+import requerid from "./requerid.js";
+
 let formEdit = document.querySelector('[data-edit]');
 let title = document.querySelector('[data-edit-title]');
 let description = document.querySelector('[data-edit-description]');
@@ -17,11 +19,14 @@ const postTaks = (TaskArray, taskTitle, taskDescription) => {
     localStorage.setItem('taskList', JSON.stringify(TaskArray));
     window.location.reload();
 }
-
-const updateTaks = (task) => {
+const updatedTasks = (task, TaskArray) => {
+    task.title = title.value;
+    task.description = description.value;
     console.log(task);
-
+    window.location.reload();
+    localStorage.setItem('taskList', JSON.stringify(TaskArray));
 }
+
 const deleteTask = (taskId) => {
     const taskArray = JSON.parse(localStorage.getItem('taskList')) || [];
     const updatedTasks = taskArray.filter(task => task.id != taskId);
@@ -51,7 +56,6 @@ const getTask = (task) => {
                     </div>
             </div>
         `;
-
             const btnDeleteList = document.querySelectorAll(`[data-btn-delete]`);
             btnDeleteList.forEach(btnDelete => {
                 btnDelete.addEventListener('click', (event) => {
@@ -73,21 +77,19 @@ const getTask = (task) => {
                     const id = event.target.closest('.card').querySelector('p').textContent;
                     const taskArray = JSON.parse(localStorage.getItem('taskList'));
                     const taskToUpdate = taskArray.find(task => task.id === id);
-                
+
                     if (taskToUpdate) {
                         title.value = taskToUpdate.title;
                         description.value = taskToUpdate.description;
-                
                         const btnUpdate = document.querySelector('[data-btn-AddEdit]');
                         btnUpdate.addEventListener('click', () => {
-                            taskToUpdate.title = title.value;
-                            taskToUpdate.description = description.value;
-                            localStorage.setItem('taskList', JSON.stringify(taskArray));
-                            window.location.reload();
+                            title.value == '' || description.value == '' ?
+                                requerid.error("Por favor, preencha todos os campos") :
+                                updatedTasks(taskToUpdate,taskArray);
                         });
                     }
                 });
-                
+
             });
 
         });
@@ -97,7 +99,6 @@ const getTask = (task) => {
 export {
     getTask,
     postTaks,
-    updateTaks,
     deleteTask
 }
 

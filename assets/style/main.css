@@ -30,6 +30,15 @@ button[data-btn-tarefa]:hover {
     transition: all 0.5s;
 }
 
+div[data-error]{
+    display: none;
+    color:#fff;
+    background: #e02d2d;
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
 #fields-container {
     display: none;
     width: 80vw;
@@ -147,9 +156,6 @@ textarea {
 .inputContainer button {
     margin: 10px 0;
 }
-
-
-
 #container {
     display: flex;
     flex-direction: column;
@@ -157,7 +163,6 @@ textarea {
     height: 100vh;
     padding: 20px;
 }
-
 #btnAdd {
     align-self: flex-end;
     border: none;
@@ -167,13 +172,11 @@ textarea {
     border-radius: 4px;
     text-transform: uppercase;
 }
-
 #btnAdd:hover {
     background: #075c41;
     cursor: pointer;
     transition: all 0.5s;
 }
-
 #cards-container {
     display: flex;
     max-width: 100vw;
