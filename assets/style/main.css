@@ -259,21 +259,41 @@ button[data-btn-delete]:hover {
     color: #d8d8d8;
 }
 
-@media (max-width:850px) {
-    .card {
-
-        min-width: 40%;
-    }
-}
 
 @media (max-width:720px) {
-    .card {
-        min-width: 100%;
 
+    .card-body {
+     font-size: 1.5rem;
     }
-
-    #fields-container {
+    button[data-btn-edit] {
+        background: none;
+        border: none;
+        color: #292929;
+        font-size: 1.3rem;
+        background:#ecd56d ;
+        padding: 10px;
         width: 100%;
-
+        border-radius: 5px;
     }
+    
+    button[data-btn-edit]:hover {
+        
+        color: #d8d8d8;
+    }
+    
+    button[data-btn-delete] {
+        background: none;
+        border: none;
+        color: #292929;
+        font-size: 1.3rem;
+        border-radius: 5px;
+        background:#b44d4d ;
+        width: 100%;
+    }
+    
+    button[data-btn-delete]:hover {
+    
+        color: #d8d8d8;
+    }
+    
 }
